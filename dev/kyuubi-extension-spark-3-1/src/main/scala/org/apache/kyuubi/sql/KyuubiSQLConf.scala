@@ -76,4 +76,13 @@ object KyuubiSQLConf {
       .version("1.4.0")
       .booleanConf
       .createWithDefault(true)
+
+  val WATCHDOG_MAX_OUTPUTROWS =
+    buildConf("spark.sql.watchdog.maxOutputRows")
+      .doc("Add restrict for query output rows, it's a optional, " +
+        "it works when set the value.")
+      .version("1.4.0")
+      .intConf
+      .createOptional
+
 }
